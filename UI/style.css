@@ -1,7 +1,6 @@
 
 body {
-	font-family: courier;
-	background-image:url("background-canvas-close-up-1020320.jpg");
+	font-family: georgia;
 	background-size: 100%;
 	font-size: 110%;
 }
@@ -130,7 +129,7 @@ input[type="button"]:visited , button:visited {
 
 
 .aboutuser{
-	border:1px solid grey;
+	border:1px solid lightgrey;
 	background-color: white;
 	width:90%;
 	font-size: 0.9em;
