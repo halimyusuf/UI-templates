@@ -3,7 +3,7 @@ body {
 	font-family: courier;
 	background-image:url("background-canvas-close-up-1020320.jpg");
 	background-size: 100%;
-	font-size: 120%;
+	font-size: 110%;
 }
 
 
@@ -22,7 +22,7 @@ img .up {
 	display: inline;
 }
 
-.signup , .profile , .signin , .admin   {
+.signup , .profile , .signin , .admin , .red-flag , .intervention , .drafts {
 	float:right;
 	padding: 0.66%;
 	margin:0.66%;
@@ -34,17 +34,7 @@ img .up {
 	border-radius: 15px;
 }
 
-.red-flag , .intervention {
-	float:right;
-	padding: 0.66%;
-	margin:0.66%;
-	text-decoration: none;
-	display: block;
-	font-weight:bolder;
-	border: 1px solid lightgrey;
-	background-color: white;
-	border-radius: 15px;
-}
+ 
 
 .container {
 	margin: 5% auto;
@@ -130,19 +120,17 @@ input[type="button"]:visited , button:visited {
 	line-height: 1.8em;
 }
 
-.user {
-	display:;
-	margin:3% auto;
-    /*margin-left: 30%;*/
-    font-size: 0.9em;
+/*.user {
+	display:block;
+    
     width:100%;
-}
+}*/
 
 
 .username , h2{
-	/*font-size: 2.0em;*/
+	font-size: 2.0em;
 	color: #0d386e;
-	/*font-family: geneva;*/
+	font-family: geneva;
 	text-align: center;
 }
 
@@ -150,20 +138,32 @@ input[type="button"]:visited , button:visited {
 .aboutuser{
 	border:1px solid grey;
 	background-color: white;
-	width:80%;
-	margin:0 auto;
+	width:90%;
+	font-size: 0.9em;
+	margin:5%;
+	border-radius:15px;
+	display:block;
 }
 
-.aboutuser p{
-	padding:1% 2%;
-	margin:1% auto;
-	background-color:white ;
-	text-align: center;
+.aboutuser #img1{
+	padding:1% 1%;
+	margin:0;
+	background-color:lightgrey ;
+	text-align: left;
 	color:#0d386e;
-	border-radius: 15px;
-	width:50%;
+	border-radius:;
+	width:40%;
+	height:20%;
 	border:0;
 	display:block;
+	margin-right: 1%;
+
+}
+
+.aboutuser {
+	float:left;
+	color:black;
+	display: block;
 }
 
 
@@ -180,8 +180,8 @@ input[type="button"]:visited , button:visited {
 	margin:3% auto;
 }
 
-.post {
-	margin:5% auto;
+.posts {
+	margin:1% auto;
 	display:inline-block;
 	text-align: center;
 	width:100%;
@@ -190,5 +190,53 @@ input[type="button"]:visited , button:visited {
 
 .postContent {
 	display: block;
-	margin:3% auto;
+	margin:1% auto;
+	width: 80%;
+}
+
+.postsparagraph {
+	display:inline-block;
+	padding-bottom: 0.5%;
+	padding-top: 0.5%;
+	line-height: 1.3em;
+	font-weight: bold;
+	color: #0d386e;
+	width:100%;
+	text-align: center;
+}
+
+.posts-btn {
+	text-align: center;
+	display:block;
+}
+
+/*#img1 {
+display:block;
+width:40%;
+height:20%;
+background-color: lightgrey;
+}
+*/
+#img2 {
+width:30%;
+height: 30%;
+float: left;
+}
+
+.userinfo , .userinfo1{
+	display:block;
+	width:90%;
+	margin-left: auto;
+	margin-right: auto;
+	border:0.5px solid lightgrey;
+	border-radius: 15px;
+	margin-top: 3%;
+}
+
+
+.userinfo1 p , .userinfo h2{
+	text-align: left;
+	color:black;
+	font-weight:bold;
+	margin-left: 1%;
 }
