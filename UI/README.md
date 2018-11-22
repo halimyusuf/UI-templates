@@ -53,3 +53,8 @@ This is a page where users sign in .
 signup.html
 -----------------------------------------------------------------------------------------------------------------------
 This is a page where new users can register.
+
+
+style.css
+---------------------------------------------------------------------------------------------------------
+This file contain the style for html pages
