@@ -19,11 +19,11 @@ GET /red-flags
 
 Fetch all red-flag records.
 -------------------------------------------
-GET /red-flags/'red-flag-id'
+GET /red-flags/:red-flag-id
   
 Fetch a specific red-flag record.
 ----------------------------------------------------------------------
-GET /'createdBy'/red-flags
+GET /:createdBy/red-flags
   
 Fetch all red-flag records created by a specific user, specified in the createdBy(user id) in the route
 -------------------------------------------------------------------------------
@@ -35,27 +35,27 @@ POST /red-flags
 
 Create a red-flag record.
 ---------------------------------------------
-PUT /red-flags/<red-flag-id>/location
+PUT /red-flags/:red-flag-id/location
   
 Edit the location of a specific red-flag record.
 ---------------------------------------------------------- 
-PUT /red-flags/<red-flag-id>/location/<userId> 
+PUT /red-flags/:red-flag-id/location/:userId 
   
 Edit the location of a specific red-flag record, only owner of record can update the location
 ----------------------------------------------------------
-PUT /red-flags/<red-flag-id>/comment
+PUT /red-flags/:red-flag-id/comment
   
 Edit the comment of a specific red-flag record.
 ---------------------------------------------------------- 
-PUT /red-flags/<red-flag-id>/comment/<userId>  
+PUT /red-flags/:red-flag-id/comment/:userId 
   
 Edit the comment of a specific red-flag record, only owner of record can update the comment
 ----------------------------------------------------------
-DELETE /red-flags/<red-flag-id>
+DELETE /red-flags/:red-flag-id
   
 Delete a specific red flag record.
 -------------------------------------------------
-DELETE /red-flags/<red-flag-id>/<user-id>
+DELETE /red-flags/:red-flag-id/:user-id
   
 Delete a specific red flag record,can only be done by owner of record in this case
 -------------------------------------------------
