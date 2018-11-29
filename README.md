@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Maintainability](https://api.codeclimate.com/v1/badges/11f94a45c7190f019292/maintainability)](https://codeclimate.com/github/halimyusuf/iReporter/maintainability)
 
-[![Coverage Status](https://coveralls.io/repos/github/halimyusuf/iReporter/badge.svg?branch=api)](https://coveralls.io/github/halimyusuf/iReporter?branch=api)
+
 
 
 -------------------------------
