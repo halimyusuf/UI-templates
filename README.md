@@ -1,2 +1,4 @@
-iReporter is a web app that enable users to bring bring any form of corruption to the notice of appropriate authorities and general public . Users can also report on things that needs government intervention.
+[![Build Status](https://travis-ci.com/halimyusuf/iReporter.svg?branch=api)](https://travis-ci.com/halimyusuf/iReporter)
+![GitHub](https://img.shields.io/github/license/halimyusuf/iReporter.svg)
+[![Packagist Pre Release](https://img.shields.io/packagist/vpre/halimyusuf/iReporter.svg?maxAge=2592000)]()
 
