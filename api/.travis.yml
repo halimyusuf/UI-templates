@@ -2,11 +2,3 @@ language: node_js
 node_js:
   - "node"
 
-branches:
-  except:
-  - master
-  - UI-temps
-
-branches:
-  only:
-  - api
