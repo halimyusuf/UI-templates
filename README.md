@@ -19,11 +19,11 @@ GET /red-flags
 
 Fetch all red-flag records.
 -------------------------------------------
-GET /red-flags/<red-flag-id>
+GET /red-flags/'red-flag-id'
   
 Fetch a specific red-flag record.
 ----------------------------------------------------------------------
-GET /<createdBy>/red-flags
+GET /'createdBy'/red-flags
   
 Fetch all red-flag records created by a specific user, specified in the createdBy(user id) in the route
 -------------------------------------------------------------------------------
