@@ -11,6 +11,23 @@ describe('Test route redflags records and users', () => {
   });
 
 
+  describe('GET / ', () => {
+    beforeAll((done) => {
+      Request.get('http://localhost:3000/api/v1' ,(error, response, body) => {
+        status = response.statusCode;
+        _body = JSON.parse(body)
+        done()
+      });
+    });
+    it('status 200', () => {
+      expect(status).toBe(200)
+    })
+    it('body should be type string', () => {
+      expect(typeof _body).toBe('object')
+    })
+  })
+
+
   describe('GET /red-flags', () => {
     const data = {};
     beforeAll((done) => {
