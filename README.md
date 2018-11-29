@@ -6,6 +6,5 @@
 [![Coverage Status](https://coveralls.io/repos/github/halimyusuf/iReporter/badge.svg?branch=api)](https://coveralls.io/github/halimyusuf/iReporter?branch=api)
 
 
-
 -------------------------------
 licensed under the MIT license
