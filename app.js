@@ -38,7 +38,9 @@ const AllRedflag = [
 ];
 
 
-// app.get("/")
+app.get('/api/v1', (req, res) => {
+  res.send({status: 200, data: "Welcome to the api_enpoints"})
+})
 // route to get all posts
 app.get('/api/v1/red-flags', (req, res) => {
   res.send({ status: 200, data: [{ AllRedflag }] });
