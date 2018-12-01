@@ -371,6 +371,52 @@ describe('Test route redflags records and users', () => {
     });
   });
 
+  describe('test if firstname is type string or min of 2 char', () => {
+    const data = {};
+    beforeAll((done) => {
+      Request.post('http://localhost:3000/api/v1/create-user', {
+        form:
+        {
+          firstname: 'h',
+          lastname: 'yusuf',
+          othernames: 'olamilekan',
+          email: 'haleemyoosuph@gmail.com',
+          phoneNumber: '07023115003',
+          username: 'halimyusuf',
+        },
+      }, (error, response, body) => {
+        status = response.statusCode;
+        done();
+      });
+    });
+    it('status 400', () => {
+      expect(status).toBe(400);
+    });
+  });
+
+
+  describe('test if lastname to be type string or min of 2 char', () => {
+    const data = {};
+    beforeAll((done) => {
+      Request.post('http://localhost:3000/api/v1/create-user', {
+        form:
+        {
+          firstname: 'halim',
+          lastname: 'y',
+          othernames: 'olamilekan',
+          email: 'haleemyoosuph@gmail.com',
+          phoneNumber: '07023115003',
+          username: 'halimyusuf',
+        },
+      }, (error, response, body) => {
+        status = response.statusCode;
+        done();
+      });
+    });
+    it('status 400', () => {
+      expect(status).toBe(400);
+    });
+  });
 
 
   describe('delete / ', () => {
