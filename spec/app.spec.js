@@ -58,6 +58,23 @@ describe('Test route redflags records and users', () => {
   });
 
 
+  describe('delete /- Failing test if not owner of record ', () => {
+    beforeAll((done) => {
+      Request.delete('http://localhost:3000/api/v1/red-flags/1/2' ,(error, response, body) => {
+        status = response.statusCode;
+        _body = JSON.parse(body)
+        done()
+      });
+    });
+    it('status 404', () => {
+      expect(status).toBe(404)
+    })
+    it('test to receive a message', () => {
+      expect(_body.error).toMatch('Users can only delete their posts')
+    })
+  })  
+
+
   describe('GET specific red-flag records', () => {
     const data = {};
     beforeAll((done) => {
@@ -86,6 +103,24 @@ describe('Test route redflags records and users', () => {
       expect(typeof data.body.data[0].status).toBe('string');
     });
   });
+
+
+  describe('delete / - Failing test', () => {
+    beforeAll((done) => {
+      Request.delete('http://localhost:3000/api/v1/red-flags/2' ,(error, response, body) => {
+        status = response.statusCode;
+        _body = JSON.parse(body)
+        done()
+      });
+    });
+    it('status 404 not found', () => {
+      expect(status).toBe(404)
+    })
+    it('test to receive a Failing test message', () => {
+      expect(_body.data).toMatch('The course with the given id cant be found')
+    })
+  })
+
 
 
   describe('Testing post request to create red-flags', () => {
@@ -311,4 +346,50 @@ describe('Test route redflags records and users', () => {
       expect(status).toBe(200);
     });
   });
+
+
+  describe('test for email', () => {
+    const data = {};
+    beforeAll((done) => {
+      Request.post('http://localhost:3000/api/v1/create-user', {
+        form:
+        {
+          firstname: 'halim',
+          lastname: 'yusuf',
+          othernames: 'olamilekan',
+          email: 'haleemyoosuph',
+          phoneNumber: '07023115003',
+          username: 'halimyusuf',
+        },
+      }, (error, response, body) => {
+        status = response.statusCode;
+        done();
+      });
+    });
+    it('status 400', () => {
+      expect(status).toBe(400);
+    });
+  });
+
+
+
+  describe('delete / ', () => {
+    beforeAll((done) => {
+      Request.delete('http://localhost:3000/api/v1/red-flags/1' ,(error, response, body) => {
+        status = response.statusCode;
+        _body = JSON.parse(body)
+        done()
+      });
+    });
+    it('status 200', () => {
+      expect(status).toBe(200)
+    })
+    it('test to receive a message', () => {
+      expect(_body.data[0].message).toMatch('red_flag record hass been deleted')
+    })
+  })
+
+
+
 });
+
