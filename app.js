@@ -7,7 +7,7 @@ const routes = require('./api/routers')
 app.use('/api/v1', routes)
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json({extended:true}));
-require('./prod')(app);
+require('./models/prod')(app);
 
 
 
