@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test-init": "./node_modules/jasmine/bin/jasmine.js init",
-    "test": "nyc jasmine",
+    "test": "jasmine",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "start" : "node app.js"
   },
