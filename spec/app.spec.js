@@ -218,7 +218,7 @@ describe('Test route redflags records and users', () => {
             title: 'This is the title',
             story: 'This is just the title stiory',
             location: '2.344 55.223',
-            createdBy: 2,
+            createdBy: 4,
           },
         },
         (error, response, body) => {
@@ -234,7 +234,7 @@ describe('Test route redflags records and users', () => {
 
   describe('expects status 200 if comment has been successfully updated', () => {
     beforeAll((done) => {
-      Request.put('http://localhost:3000/api/v1/red-flags/1/comment',
+      Request.patch('http://localhost:3000/api/v1/red-flags/1/comment',
         { form: { comment: 'This is a comment' } },
         (error, response, body) => {
           status = response.statusCode;
@@ -249,7 +249,7 @@ describe('Test route redflags records and users', () => {
 
   describe('should return 400 if comment is not specified or lenght is not up to 1', () => {
     beforeAll((done) => {
-      Request.put('http://localhost:3000/api/v1/red-flags/1/comment',
+      Request.patch('http://localhost:3000/api/v1/red-flags/1/comment',
         { form: { comment: '' } },
         (error, response, body) => {
           status = response.statusCode;
@@ -264,7 +264,7 @@ describe('Test route redflags records and users', () => {
 
   describe('Testing update/patch request for records(only owner of record is allowed)', () => {
     beforeAll((done) => {
-      Request.put('http://localhost:3000/api/v1/red-flags/1/comment/1',
+      Request.patch('http://localhost:3000/api/v1/red-flags/1/comment/1',
         { form: { comment: 'This is a new comment' } },
 				 (error, response, body) => {
           status = response.statusCode;
@@ -279,7 +279,7 @@ describe('Test route redflags records and users', () => {
 
   describe('Testing if record has been successfully updated', () => {
     beforeAll((done) => {
-      Request.put('http://localhost:3000/api/v1/red-flags/1/location',
+      Request.patch('http://localhost:3000/api/v1/red-flags/1/location',
         { form: { location: '30.23 65.22' } },
 				 (error, response, body) => {
           status = response.statusCode;
@@ -294,7 +294,7 @@ describe('Test route redflags records and users', () => {
 
   describe('should return 400 if location is not specified or not type string', () => {
     beforeAll((done) => {
-      Request.put('http://localhost:3000/api/v1/red-flags/1/location',
+      Request.patch('http://localhost:3000/api/v1/red-flags/1/location',
         { form: { location: '' } },
         (error, response, body) => {
           status = response.statusCode;
@@ -310,7 +310,7 @@ describe('Test route redflags records and users', () => {
   describe('Testing update/patch request for records(only owner of record is allowed)', () => {
     const data4 = {};
     beforeAll((done) => {
-      Request.put('http://localhost:3000/api/v1/red-flags/1/location/1',
+      Request.patch('http://localhost:3000/api/v1/red-flags/1/location/1',
         { form: { location: '30.23 65.22' } },
         (error, response, body) => {
           data4.status = response.statusCode;
