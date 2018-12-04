@@ -4,8 +4,9 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/11f94a45c7190f019292/maintainability)](https://codeclimate.com/github/halimyusuf/iReporter/maintainability)
 
 --------------------------------------------------------------------------------------------------------------
-App hosted on heroku@ - https://halimyusuf-ireporter.herokuapp.com/api/v1/
-gh-pages - https://halimyusuf.github.io/iReporter/UI/home.html
+[heroku](https://halimyusuf-ireporter.herokuapp.com/api/v1/)
+
+[gh-pages](https://halimyusuf.github.io/iReporter/UI/home.html)
 ---------------------------------------------------------------------------------------------------------
 Creating a set of API endpoints defined in the API Endpoints Specifications below
 
