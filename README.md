@@ -5,7 +5,8 @@
 [![Coverage Status](https://coveralls.io/repos/github/halimyusuf/iReporter/badge.svg?branch=api)](https://coveralls.io/github/halimyusuf/iReporter?branch=api)
 
 --------------------------------------------------------------------------------------------------------------
-[heroku] (https://halimyusuf-ireporter.herokuapp.com/api/v1/)
+[heroku](https://halimyusuf-ireporter.herokuapp.com/api/v1/)
+
 [gh-pages](https://halimyusuf.github.io/iReporter/UI/home.html)
 ---------------------------------------------------------------------------------------------------------
 Creating a set of API endpoints defined in the API Endpoints Specifications below
