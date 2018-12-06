@@ -4,12 +4,12 @@
   "main": "index.js",
   "scripts": {
     "test-init": "./node_modules/jasmine/bin/jasmine.js init",
-    "test": "jasmine",
+    "test": "nyc jasmine",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
-    "start" : "node app.js"
+    "start": "node app.js"
   },
   "engines": {
-    "node":"10.13.0"
+    "node": "10.13.0"
   },
   "keywords": [],
   "author": "",
