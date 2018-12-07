@@ -4,7 +4,7 @@ const Request = require('request');
 describe('Test route redflags records and users', () => {
   let server;
   beforeAll(() => {
-    server = require('../server/app');
+    server = require('../app');
   });
   afterAll(() => {
     server.close();
