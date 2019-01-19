@@ -4,7 +4,7 @@ let  token;
 let server;
 describe('Test route records', () => { 
   beforeEach(() => {
-    server = require('../server/app');
+    server = require('../app');
   });
   afterEach(async () => {
     await server.close();
