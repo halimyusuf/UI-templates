@@ -2,7 +2,7 @@
 const Joi = require('joi');
 const db = require('../database/database');
 const jwt = require('jsonwebtoken');
-
+const config = require('config')
 
 const auth =  {
   async verifyToken(req, res, next) {
@@ -11,7 +11,7 @@ const auth =  {
       return res.status(400).send({ 'message': 'Token is not provided' });
     }
     try {
-      const decoded = await jwt.verify(token, process.env.SECRET);
+      const decoded = await jwt.verify(token, config.get('jwtPrivateKey'));
       const text = 'SELECT * FROM users WHERE id = $1';
       const { rows } = await db.query(text, [decoded.userId]);
       if(!rows[0]) {
