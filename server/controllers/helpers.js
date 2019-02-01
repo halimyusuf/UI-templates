@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt-nodejs')
-
+const config = require('config')
 const Helper = {
     
     hashPassword(password) {
@@ -20,7 +20,7 @@ const Helper = {
         userId: id,
         username: user
       },
-        process.env.SECRET, { expiresIn: '7d' }
+        config.get('jwtPrivateKey'), { expiresIn: '7d' }
       );
       return token;
     }
