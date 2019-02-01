@@ -27,5 +27,5 @@ const AllRedflag = [
 ];
 
 
-exports.users = users
-exports.AllRedflag = AllRedflag
+exports.users = users;
+exports.AllRedflag = AllRedflag;

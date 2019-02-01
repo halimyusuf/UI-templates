@@ -1,30 +1,36 @@
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt-nodejs')
-const config = require('config')
-const Helper = {
-    
-    hashPassword(password) {
-      return bcrypt.hashSync(password, bcrypt.genSaltSync(8))
-    },
-    
-    comparePassword(hashPassword, password) {
-      return bcrypt.compareSync(password, hashPassword);
-    },
-    
-    isValidEmail(email) {
-      return /\S+@\S+\.\S+/.test(email);
-    },
-    
-    generateToken(id,user) {
-      const token = jwt.sign({
-        userId: id,
-        username: user
-      },
-        config.get('jwtPrivateKey'), { expiresIn: '7d' }
-      );
-      return token;
-    }
-  }
-  
-  module.exports = Helper
-  require('make-runnable')
+const { Pool } = require('pg');
+// const dotenv = require('dotenv');
+const config = require('config');
+
+// dotenv.config();
+
+const pool = new Pool({
+  connectionString: config.get('dbPrivateKey'),
+});
+
+module.exports = {
+  /**
+   * DB Query
+   * @param {object} req
+   * @param {object} res
+   * @returns {object} object
+   */
+  query(text, params) {
+    return new Promise((resolve, reject) => {
+      pool.query(text, params)
+        .then((res) => {
+          resolve(res);
+        })
+        .catch((err) => {
+          reject(err);
+        });
+    });
+  },
+};
+
+// DB_URL = postgres://postgres@127.0.0.1:5432/test
+// DB_URL=postgres://evgsfxey:O3nPqM7obcrppHBbsdmCFNL7-G11Lotv@pellefant.db.elephantsql.com:5432/evgsfxey
+// ,
+//     "dbPrivateKey": "iReporter_dbPrivateKey"
+//     ,
+//     "dbPrivateKey": ""

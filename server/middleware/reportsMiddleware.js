@@ -1,29 +1,29 @@
 
 const Joi = require('joi');
-const db = require('../database/database');
 const jwt = require('jsonwebtoken');
-const config = require('config')
+const config = require('config');
+const db = require('../database/database');
 
-const auth =  {
+const auth = {
   async verifyToken(req, res, next) {
-    const token = req.headers['x-auth-token']
-    if(!token) {
-      return res.status(400).send({ 'message': 'Token is not provided' });
+    const token = req.headers['x-auth-token'];
+    if (!token) {
+      return res.status(400).send({ message: 'Token is not provided' });
     }
     try {
       const decoded = await jwt.verify(token, config.get('jwtPrivateKey'));
       const text = 'SELECT * FROM users WHERE id = $1';
       const { rows } = await db.query(text, [decoded.userId]);
-      if(!rows[0]) {
-        return res.status(403).send({ 'message': 'The token you provided is invalid' });
+      if (!rows[0]) {
+        return res.status(403).send({ message: 'The token you provided is invalid' });
       }
-      req.user = { id: decoded.userId, user : decoded.username };
+      req.user = { id: decoded.userId, user: decoded.username };
       next();
-    } catch(error) {
+    } catch (error) {
       return res.status(400).send(error);
     }
-  }
-}
+  },
+};
 
 function validateUser(user) {
   const schema = {
@@ -45,9 +45,9 @@ function validateUser(user) {
 function validateLogin(login) {
   const schema = {
     email: Joi.string().email({ minDomainAtoms: 2 }).required(),
-    password: Joi.string().regex(/(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{6,50})$/).required()
+    password: Joi.string().regex(/(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{6,50})$/).required(),
   };
-  return Joi.validate(login,schema)
+  return Joi.validate(login, schema);
 }
 
 
@@ -56,11 +56,11 @@ function validateRedflag(redflag) {
     title: Joi.string().min(10).required(),
     story: Joi.string().min(30).required(),
     // status : Joi.string().valid(["draft", "under investigation", "resolved","rejected" ]),
-    type: Joi.string().valid(['Redflag','Intervention']),
+    type: Joi.string().valid(['Redflag', 'Intervention']),
     longitude: Joi.string().min(1).required(),
     latitude: Joi.string().min(1).required(),
     images: Joi.string(),
-    videos: Joi.string()
+    videos: Joi.string(),
   };
 
   return Joi.validate(redflag, schema);
@@ -76,7 +76,7 @@ function validateComment(comment) {
 
 function validateStatus(status) {
   const schema = {
-    status : Joi.string().valid(["Draft", "Under investigation", "Resolved","Rejected" ]),
+    status: Joi.string().valid(['Draft', 'Under investigation', 'Resolved', 'Rejected']),
   };
   return Joi.validate(status, schema);
 }
@@ -84,7 +84,7 @@ function validateStatus(status) {
 function validateLocation(location) {
   const schema = {
     longitude: Joi.string().min(1).required(),
-    latitude: Joi.string().min(1).required()
+    latitude: Joi.string().min(1).required(),
   };
 
   return Joi.validate(location, schema);
@@ -94,6 +94,6 @@ exports.validate_user = validateUser;
 exports.validate_redflag = validateRedflag;
 exports.validate_comment = validateComment;
 exports.validate_location = validateLocation;
-exports.validate_login = validateLogin
-exports.validate_status = validateStatus
-exports.auth = auth
+exports.validate_login = validateLogin;
+exports.validate_status = validateStatus;
+exports.auth = auth;
