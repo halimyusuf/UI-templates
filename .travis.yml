@@ -12,9 +12,6 @@ env:
     - CC_TEST_REPORTER_ID=cb8ee60aa117bcc26e976124f5402dea10016ccd83f7667a8d380c71876af7e0
     
 before_script:
-  - touch .env 
-  - echo SECRET=myRandomSecretKey > .env
-  - echo DB_URL=postgres://evgsfxey:O3nPqM7obcrppHBbsdmCFNL7-G11Lotv@pellefant.db.elephantsql.com:5432/evgsfxey > .env
   - npm install
   - npm install supertest
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
