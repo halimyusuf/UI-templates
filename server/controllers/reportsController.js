@@ -110,7 +110,7 @@ class recordsController {
 
   // get all interventions
   async getInterventions(req, res) {
-    const getAllInterventions = 'SELECT * FROM incidents WHERE type = \'Interventions\' ';
+    const getAllInterventions = 'SELECT * FROM incidents WHERE type = \'Intervention\' ';
     try {
       const { rows } = await db.query(getAllInterventions);
       res.send({ status: 200, data: [rows[0]] });
