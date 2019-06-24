@@ -6,6 +6,6 @@
 --------------------------------------------------------------------------------------------------------------
 [heroku](https://halimyusuf-ireporter.herokuapp.com/api/v1/)
 
-[gh-pages](https://halimyusuf.github.io/iReporter/UI/home.html)
+[gh-pages](https://halimyusuf.github.io/iReporter/UI/index.html)
 ---------------------------------------------------------------------------------------------------------
 
